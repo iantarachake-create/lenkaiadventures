@@ -96,6 +96,23 @@ footer .logo{font-size:1.5rem}
 footer .fl{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin:1.2rem 0;padding:0;list-style:none}
 footer a{text-decoration:none;opacity:.85}footer a:hover{color:var(--pink);opacity:1}
 footer small{opacity:.7}
+/* offer + reviews */
+.badge{display:inline-block;padding:.35rem 1.1rem;margin-bottom:1rem;border-radius:999px;background:var(--grad);color:#fff;font:700 .78rem var(--sans);letter-spacing:.14em;text-transform:uppercase;text-shadow:0 1px 2px rgba(0,0,0,.25)}
+.offer{border-width:2px}
+.rtrack{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.5rem .25rem 1.2rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rtrack::-webkit-scrollbar{display:none}
+.rcard{flex:0 0 min(340px,84%);scroll-snap-align:center;padding:1.5rem}
+.rcard .st{color:var(--gold);font-size:1.15rem;letter-spacing:.12em}
+.rcard p{margin:.6rem 0 1rem}
+.rcard b{display:block}.rcard small{color:var(--mut)}
+.rform{max-width:640px;margin:2.5rem auto 0;padding:clamp(1.4rem,4vw,2.2rem)}
+.rform label{display:block;margin:.9rem 0 .3rem;font:700 .8rem var(--sans)}
+.rform input,.rform textarea{width:100%;padding:.8rem 1rem;border-radius:16px;border:1px solid var(--bd);background:var(--glass);color:var(--tx);font:inherit;min-height:48px}
+.rform .btn{margin-top:1.2rem}
+#rstars{display:flex;gap:.3rem;margin-top:1rem}
+#rstars button{width:44px;height:44px;border-radius:50%;border:1px solid var(--bd);background:var(--glass);color:var(--mut);font-size:1.4rem;cursor:pointer}
+#rstars button.on{color:#fff;background:var(--grad);border-color:transparent}
+#rmsg{margin:.8rem 0 0;font-weight:700;color:var(--pink)}
 /* lightbox */
 #lb{position:fixed;inset:0;z-index:100;display:none;place-items:center;background:rgba(15,8,6,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 #lb.on{display:grid}
@@ -181,12 +198,41 @@ footer small{opacity:.7}
   </div></div>
 </section>
 
+<section id="offer">
+  <div class="wrap"><div class="glass book offer rv">
+    <span class="badge">Group Offer</span>
+    <h2>Bring 10 People. Enjoy the Rewards.</h2>
+    <p>Bring 10 people to explore Kenya for 2 days and you'll get a <strong>free dinner</strong> and <strong>5% off your stay</strong>.</p>
+    <div class="cta"><a class="btn pri" href="https://wa.me/254741378006?text=Hello%20Lenkai%2C%20I%27d%20like%20to%20claim%20the%20group%20offer%20for%2010%20people." target="_blank" rel="noopener">Claim the Group Offer</a></div>
+  </div></div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="head rv"><h2>What Our Travelers Say</h2><p>Stories from guests who explored Kenya with Lenkai.</p></div>
+    <div class="rtrack" id="rtrack" tabindex="0" aria-label="Traveler reviews"></div>
+    <div class="ctl"><button class="nb" id="rp" aria-label="Previous review">‹</button><button class="nb" id="rn" aria-label="Next review">›</button></div>
+    <form class="glass rform rv" id="rform" autocomplete="off">
+      <h3>Share Your Experience</h3>
+      <label for="rname">Your name</label>
+      <input id="rname" maxlength="40" required>
+      <label for="rplace">Safari or destination (optional)</label>
+      <input id="rplace" maxlength="50">
+      <div id="rstars" role="radiogroup" aria-label="Rating"></div>
+      <label for="rtext">Your review</label>
+      <textarea id="rtext" rows="4" maxlength="400" required></textarea>
+      <button class="btn pri" type="submit">Submit Review</button>
+      <p id="rmsg" role="status"></p>
+    </form>
+  </div>
+</section>
+
 <section id="contact">
   <div class="wrap"><div class="glass book rv">
     <h2>Ready to Explore Kenya?</h2>
     <p>Plan your next adventure with LENKAI WILD ADVENTURES &amp; SAFARIS.</p>
     <p>Whether you're planning a romantic getaway, family holiday, group safari, wildlife adventure or private luxury experience, we're ready to help you create an unforgettable journey.</p>
-    <p><strong>Call or WhatsApp: <a href="tel:+254741378006">0741 378006</a></strong></p>
+    <p><strong>Call or WhatsApp: <a href="tel:+254741378006">0741 378006</a></strong><br><strong>Email: <a href="mailto:lenkdalton@gmail.com">lenkdalton@gmail.com</a></strong></p>
     <div class="cta">
       <a class="btn pri" href="https://wa.me/254741378006?text=Hello%20Lenkai%2C%20I%27d%20like%20to%20book%20a%20safari." target="_blank" rel="noopener">Book Your Safari</a>
       <a class="btn" href="tel:+254741378006">Contact Us</a>
@@ -208,7 +254,7 @@ footer small{opacity:.7}
     <div class="logo">LENKAI WILD ADVENTURES &amp; SAFARIS</div>
     <p>Premium Safaris Across Kenya</p>
     <ul class="fl"><li><a href="#home">Home</a></li><li><a href="#destinations">Destinations</a></li><li><a href="#safaris">Safaris</a></li><li><a href="#experiences">Experiences</a></li><li><a href="#transfers">Airport Transfers</a></li><li><a href="#contact">Contact</a></li><li><a href="#safaris">Book Now</a></li></ul>
-    <p><a href="tel:+254741378006">0741 378006</a></p>
+    <p><a href="tel:+254741378006">0741 378006</a> &nbsp;|&nbsp; <a href="mailto:lenkdalton@gmail.com">lenkdalton@gmail.com</a></p>
     <small>© 2026 Lenkai Wild Adventures &amp; Safaris. All Rights Reserved.</small>
   </div>
 </footer>
@@ -282,6 +328,39 @@ XP.forEach(([n,ic,d,ids,wide])=>{
   if(wide){const w=el("div","in2");w.append(media,txt);c.append(w)}else c.append(media,txt);
   $("#xp").append(c)});
 
+/* reviews */
+const REV=[
+["Amani K.","Maasai Mara",5,"The balloon safari at sunrise was the highlight of our trip. Everything ran smoothly from pick-up to drop-off."],
+["Sarah & Tom","Amboseli",5,"Elephants with Kilimanjaro behind them. Our guide knew exactly where to go and when."],
+["Wanjiru M.","Mombasa & Nyali",5,"Easy airport transfer and a lovely beach stay. We felt looked after the whole way."],
+["David O.","Tsavo",5,"Great planning and a comfortable vehicle. We saw lions on the second morning."],
+["Priya S.","Samburu",4,"Beautiful, quiet park with species we had never seen. The lodge was a perfect end to each day."],
+["James L.","Lake Nakuru",5,"Thousands of flamingos and a rhino sighting. Very patient and friendly guide."],
+["Achieng R.","Naivasha",5,"Our family weekend was relaxed and well organised. The kids loved the boat ride."],
+["Michael B.","Manyatta Visit",5,"A warm welcome and an honest look at local culture. Respectful and unforgettable."],
+["Fatuma H.","Sundowner",5,"The sundowner on the plains was pure magic. Worth every minute."],
+["Chris & Elena","Private Safari",5,"They built a private itinerary around our dates and interests. We would book again."]];
+const rtrack=$("#rtrack"),RK="lenkai-reviews";
+let mine=[];try{mine=JSON.parse(localStorage.getItem(RK)||"[]")}catch(e){}
+function rcard(n,pl,s,t){const c=el("article","glass rcard");
+  const st=el("div","st");st.textContent="★".repeat(s)+"☆".repeat(5-s);st.setAttribute("aria-label",s+" out of 5 stars");
+  const p=el("p");p.textContent="“"+t+"”";const b=el("b");b.textContent=n;const sm=el("small");sm.textContent=pl;
+  c.append(st,p,b,sm);return c}
+function drawRev(){rtrack.innerHTML="";mine.concat(REV.map(r=>({n:r[0],p:r[1],s:r[2],t:r[3]}))).forEach(r=>rtrack.append(rcard(r.n,r.p,r.s,r.t)))}
+mine=mine.filter(r=>r&&r.n&&r.t&&r.s);drawRev();
+const rstep=()=>rtrack.firstElementChild.offsetWidth+19;
+$("#rp").onclick=()=>rtrack.scrollBy({left:-rstep(),behavior:"smooth"});
+$("#rn").onclick=()=>rtrack.scrollBy({left:rstep(),behavior:"smooth"});
+rtrack.addEventListener("keydown",e=>{if(e.key==="ArrowLeft")$("#rp").click();if(e.key==="ArrowRight")$("#rn").click()});
+let rate=5;const rs=$("#rstars");
+for(let k=1;k<=5;k++){const b=el("button",k<=5?"on":"","★");b.type="button";b.setAttribute("role","radio");b.setAttribute("aria-label",k+" star"+(k>1?"s":""));b.onclick=()=>{rate=k;[...rs.children].forEach((x,j)=>x.classList.toggle("on",j<k))};rs.append(b)}
+$("#rform").onsubmit=e=>{e.preventDefault();
+  const n=$("#rname").value.trim(),t=$("#rtext").value.trim(),pl=$("#rplace").value.trim()||"Lenkai traveler";
+  if(!n||!t){$("#rmsg").textContent="Please add your name and review.";return}
+  mine.unshift({n:n,p:pl,s:rate,t:t});
+  try{localStorage.setItem(RK,JSON.stringify(mine.slice(0,50)))}catch(x){}
+  drawRev();rtrack.scrollTo({left:0,behavior:"smooth"});
+  e.target.reset();$("#rmsg").textContent="Thank you! Your review has been added.";};
 /* nav + reveal */
 const bg=$("#bg"),lk=$("#lk");
 bg.onclick=()=>{const o=lk.classList.toggle("open");bg.setAttribute("aria-expanded",o);bg.textContent=o?"✕":"☰"};
